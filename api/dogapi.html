@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Api</title>
+</head>
+<body>
+   <table border="1" align="center">
+        <th>Dogs</th>
+        <tbody id="dogdata"></tbody>
+   </table> 
+</body>
+<script>
+    fetch('https://dog.ceo/api/breeds/image/random/5')
+    .then((res)=> res.json())
+    .then((Response)=>{
+        console.log(Response.message)
+        data = Response.message
+        htmldata = ''
+        data.forEach(element => {
+            console.log(element);
+            htmldata += 
+            `
+            <tr>
+                <td><img src="${element}" heigth="400" width="400"/></td>
+            </tr>
+            `
+            document.getElementById('dogdata').innerHTML = htmldata
+        });
+    }).catch((Error)=>{
+        console.log(Error);
+    })
+</script>
+</html>
