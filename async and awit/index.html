@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async and await</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // promises
+    const promise = new Promise((resolve,reject)=>{
+        let a = 5;
+        let b = 1;
+            if (a === b) {
+                resolve("both are same")
+            }
+            else{
+                reject("both are not same")
+            }
+        }).then((res)=>{
+            console.log(res);
+        }).catch((err)=>{
+            console.log(err)
+        })
+    
+    
+    // async and await
+
+    const helperpromise = function () {
+        const promise = new Promise((resolve,reject)=>{
+            let a = 5;
+            let b = 1;
+            if (a===b) {
+                resolve("resolve")
+            }
+            else{
+                reject("reject")
+            }
+        })
+        return promise
+    }
+
+    async function demo() {
+        try{
+            let message = await helperpromise();
+            console.log(message);
+        }
+        catch(err){
+            console.log("error " + err);
+        }
+    }
+
+    demo()
+</script>
+</html>
