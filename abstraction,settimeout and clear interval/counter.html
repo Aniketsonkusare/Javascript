@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <style>
+        *{
+            background-color: rgba(22, 207, 198, 0.425);
+        }
+        #dec {
+            color: red;
+            /* background-color: aquamarine; */
+            font-size: 40px;
+        }
+
+        #inc {
+            color: red;
+            /* background-color: aquamarine; */
+            font-size: 40px;
+        }
+
+        h1 {
+            margin: 50px;
+            color: red;
+            font-size: 100px;
+        }
+        .count{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="count">
+        <button id="dec">Decrement</button>
+        <h1 id="value">0</h1>
+        <button id="inc">Increment</button>
+    </div>
+</body>
+<script>
+    let counter = 0;
+    let value = document.getElementById("value")
+    let Incrementcount = document.getElementById("inc")
+    let Decrementcount = document.getElementById("dec")
+
+    // increment
+    Incrementcount.addEventListener('click',function(){
+        counter++;
+        value.innerHTML = counter
+    })
+
+    Decrementcount.addEventListener('click',function(){
+        counter--;
+        value.innerHTML = counter
+    })
+</script>
+
+</html>

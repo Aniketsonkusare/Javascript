@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>polymorphishm</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class a{
+        student(){
+            console.log("he is a student");
+        }
+    }
+    class b extends a{
+        student(){
+            console.log("he is a monitor");
+        }
+    }
+    class c extends b{
+        student(){
+            console.log("he is a dancer");
+        }
+    }
+    let ob1 = new a;
+    let ob2 = new b;
+    let ob3 = new c;
+
+    ob1.student()
+    ob2.student()
+    ob3.student()
+</script>
+</html>

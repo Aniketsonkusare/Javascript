@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abstraction</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // abstraction
+    function vehicle(vehiclename) {
+        this.vehiclename = vehiclename
+    }
+    vehicle.prototype.display = function()
+    {
+        return "vehicle name is " + this.vehiclename
+    }
+
+    function bike(vehiclename) {
+        this.vehiclename = vehiclename
+    }
+    bike.prototype = Object.create(vehicle.prototype)
+    let Bike = new bike("yamaha")
+    console.log(Bike.display());
+
+    // function person(fname,lname) {
+    //     this.fname = fname;
+    //     this.lname = lname
+    // }
+    // const prsn = new person("Aniket","Hindu")
+    // console.log(prsn);
+    // console.log(person.prototype);
+    // person.prototype.getFullname = function(){
+    //     console.log(this.fname + " " + this.lname);
+    //     return this.fname + " " + this.lname
+    // }
+
+    // console.log(person.prototype.getFullname());
+
+    // person.prototype.age = function(age){
+    //     this.age = age;
+    //     console.log(this,this.fname, this.lname,this.age);
+    // }
+    // person.prototype.age()
+</script>
+</html>

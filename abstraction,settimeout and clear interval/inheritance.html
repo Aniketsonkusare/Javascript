@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inheritance</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class parent{
+        constructor(name,surname){
+            this.name = name
+            this.surname = surname
+        }
+        age(){
+            console.log("my age is 21");
+        }
+    }
+    class child extends parent{
+        constructor(name,surname){
+            console.log("my name is " + name);
+            super(name,surname)
+        }
+    }
+    let obj = new child("Aniket","Sonkusare")
+    console.log(obj.name);
+    console.log(obj.surname);
+    obj.age()
+
+
+    // prototype inheritance
+
+    function person(fname,lname) {
+        this.fname = fname
+        this.lname = lname
+    }
+    const prsn = new person("aniket","sonkusare")
+    function student(fname,lname,age,school) {
+        person.call(this,fname,lname)
+        this.age = age
+        this.school = school
+    }
+
+    let person1 = new student("john","doe",25,"red & white")
+    console.log(person1);
+</script>
+</html>

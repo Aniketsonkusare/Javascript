@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider with setInterval</title>
+    <style>
+        img{
+            width: 50%;
+            height: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider1">
+        <div class="slider">
+            <img src="images/slider1.jpg" alt="">
+        </div>
+        <div class="slider">
+            <img src="images/slider2.jpg" alt="">
+        </div>
+        <div class="slider">
+            <img src="images/slider3.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- <button onclick="setslides(-1)">Prev</button>
+    <button onclick="setslides(1)">Next</button> -->
+</body>
+<script>
+    let currentslides = 1;
+
+    function displayslides(num) {
+        let slides = document.getElementsByClassName('slider')
+        if (num > slides.length) {
+            currentslides = 1;
+        }
+        if(num < 1){
+            currentslides = slides.length
+        }
+        for(let x = 0; x < slides.length; x++){
+            slides[x].style.display = "none";
+        }
+        slides[currentslides-1].style.display = "block"
+    }
+
+    displayslides(currentslides)
+
+    function setslides(num) {
+        setInterval(() => {
+            displayslides(currentslides += num)
+        }, 500);
+    }
+
+    window.onload = function()
+    {
+        setslides(1)
+    }
+</script>
+</html>
